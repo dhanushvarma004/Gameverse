@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image with Description</title>
+    <style>
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            padding: 0 20px;
+            height: 60px;
+        }
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+        .search-container input[type="text"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 300px;
+        }
+        .search-container button[type="submit"] {
+            padding: 8px 15px;
+            background-color: #04621f;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .search-container button[type="submit"]:hover {
+            background-color: #039b2e;
+        }
+        .nav-links ul {
+            list-style: none;
+            display: flex;
+        }
+        .nav-links ul li {
+            margin: 0 15px;
+        }
+        .nav-links ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 80vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: black;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80%;
+            max-width: 1200px;
+            margin-top: 80px; /* Add margin-top to move it below the header */
+        }
+
+        .image-box-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .image-box, .additional-box, .description-box {
+            background-color: #050505;
+            border-radius: 10px;
+            padding: 20px;
+            color: #faf5f5;
+        }
+
+        .image-box, .additional-box {
+            flex: 1;
+        }
+
+        .image-box {
+            margin-right: 20px;
+        }
+
+        .additional-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .description-box {
+            width: 100%;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .center-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .description h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-decoration: underline;
+        }
+
+        .description p {
+            margin: 10px 0;
+        }
+
+        .buy-button {
+            background-color: #128403;
+            color: #faf5f5;
+            padding: 10px 20px;
+            width:300px;
+            text-align: center;
+            margin-left: 200px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top:-50px;
+        }
+
+        .buy-button:hover {
+            background-color: #055801;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="nav-links">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="library.html">Library</a></li>
+            </ul>
+        </div>
+        <div class="account-container">
+            <a href="account.html">Account</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="image-box-container">
+            <div class="image-box">
+                <img src="e2.jpg" alt="Description of the image" class="center-image">
+            </div>
+            <div class="additional-box">
+                <div>
+                    <h2>Euro Truck Simulator</h2>
+                    <p>REVIEW</p>
+                    <p>RECENT REVIEWS:
+                        Overwhelmingly Positive (7,088)
+                        <p> ALL REVIEWS:
+                        Overwhelmingly Positive (570,633) *
+                        <p> RELEASE DATE:
+                        18 Oct, 2012
+                        <p> DEVELOPER:
+                        SCS Software
+                        <p> PUBLISHER:
+                        SCS Software</p>
+                </div>
+                <div>
+                    <h3>Price : RS 920</h3>
+                </div>
+                <button class="buy-button">BUY</button>
+            </div>
+        </div>
+        <div class="description-box">
+            <div class="description">
+                <h2>ABOUT THIS GAME</h2>
+                <p>Travel across Europe as king of the road, a trucker who delivers important cargo across impressive distances! With dozens of cities to explore from the UK, Belgium, Germany, Italy, the Netherlands, Poland, and many more, your endurance, skill and speed will all be pushed to their limits. If you’ve got what it takes to be part of an elite trucking force, get behind the wheel and prove it!
+                    <p> Key Features:
+                    
+                        <p> Transport a vast variety of cargo across more than 60 European cities.
+                            <p> Run your own business which continues to grow even as you complete your freight deliveries.
+                                <p> Build your own fleet of trucks, buy garages, hire drivers, manage your company for maximum profits.
+                                    <p> A varied amount of truck tuning that range from performance to cosmetic changes.
+                                        <p> Customize your vehicles with optional lights, bars, horns, beacons, smoke exhausts, and more.
+                                            <p> Thousands of miles of real road networks with hundreds of famous landmarks and structures.</p>
+                <h2>SYSTEM REQUIREMENTS</h2>
+                <p>MINIMUM:</p>
+                <p>OS: Windows 10 64-bit
+                    <p></p>Processor: Intel Core i5-6400 or AMD Ryzen 3 1200 or similar
+                    <p> Memory: 8 GB RAM
+                        <p> Graphics: NVIDIA GeForce GTX 660 or AMD Radeon RX 460 or Intel HD 630 (2GB VRAM)
+                            <p> Hard Drive: 25 GB available space (Euro Truck Simulator 2 base game)</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

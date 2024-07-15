@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamer Profile</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #020202;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .profile-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80%;
+            max-width: 600px;
+            padding: 20px;
+            background-color: #1c1c1c;
+            box-shadow: 0 0 10px #02441f;
+            border-radius: 10px;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .profile-info {
+            text-align: left;
+            color: #faf5f5;
+            width: 100%;
+        }
+
+        .profile-info p {
+            margin: 10px 0;
+        }
+
+        .profile-info input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #02441f;
+            border-radius: 4px;
+            box-sizing: border-box;
+            background-color: #faf5f5;
+            color: #000;
+        }
+
+        input[type="file"] {
+            display: none; /* Hide the file input */
+        }
+
+        label {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        #imagePreviewContainer {
+            display: none;
+            margin-top: 20px;
+            float: left;
+        }
+
+        #imagePreview {
+            width: 150px;
+            height: 150px;
+            border: 1px solid #ddd;
+        }
+
+        .form-container {
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <div class="profile-header">
+            <img src="profile.webp" alt="Profile Picture" class="profile-picture" id="profilePicture">
+            <div class="profile-info">
+                <p>Username:</p>
+                <input type="text" placeholder="Username" class="input-username" readonly>
+                <p>Name:</p>
+                <input type="text" placeholder="Enter your Name" class="input-name" readonly>
+                <p>Email:</p>
+                <input type="text" placeholder="Enter your Email" class="input-email" readonly>
+                <p>Mobile Number:</p>
+                <input type="text" placeholder="Enter your Mobile Number" class="input-phonenumber" readonly>
+            </div>
+        </div>
+
+        <div id="imagePreviewContainer">
+            <img id="imagePreview" src="#" alt="Image Preview">
+        </div>
+
+        <div class="form-container">
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <input type="file" name="image" accept="image/*" id="imageInput" onchange="previewImage(event)">
+                <label for="imageInput">Choose Image</label>
+                <button type="submit" class="finalupload">Upload</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        async function fetchUserData() {
+            const username = getQueryParam('username');
+
+            if (!username) {
+                console.error('Username query parameter not found');
+                return;
+            }
+
+            try {
+                const response = await fetch(`/api/user?username=${username}`);
+                const user = await response.json();
+
+                if (response.ok) {
+                    document.querySelector('.input-username').value = user.username;
+                    document.querySelector('.input-name').value = user.name;
+                    document.querySelector('.input-email').value = user.email;
+                    document.querySelector('.input-phonenumber').value = user.phoneNumber;
+                    document.getElementById('profilePicture').src = user.profilePicture || 'profile.webp'; // Assuming user object has profilePicture property
+                } else {
+                    console.error('Error fetching user data:', user.message);
+                }
+            } catch (error) {
+                console.error('Error fetching user data:', error);
+            }
+        }
+
+        function previewImage(event) {
+            var input = event.target;
+
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    document.getElementById('imagePreview').src = e.target.result;
+                };
+
+                reader.readAsDataURL(input.files[0]);
+
+                document.getElementById('imagePreviewContainer').style.display = 'block';
+            }
+        }
+
+        window.onload = fetchUserData;
+    </script>
+</body>
+</html>

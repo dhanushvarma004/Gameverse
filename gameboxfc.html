@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image with Description</title>
+    <style>
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            padding: 0 20px;
+            height: 60px;
+        }
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+        .search-container input[type="text"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 300px;
+        }
+        .search-container button[type="submit"] {
+            padding: 8px 15px;
+            background-color: #04621f;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .search-container button[type="submit"]:hover {
+            background-color: #039b2e;
+        }
+        .nav-links ul {
+            list-style: none;
+            display: flex;
+        }
+        .nav-links ul li {
+            margin: 0 15px;
+        }
+        .nav-links ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 80vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: black;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80%;
+            max-width: 1200px;
+            margin-top: 80px; /* Add margin-top to move it below the header */
+        }
+
+        .image-box-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .image-box, .additional-box, .description-box {
+            background-color: #050505;
+            border-radius: 10px;
+            padding: 20px;
+            color: #faf5f5;
+        }
+
+        .image-box, .additional-box {
+            flex: 1;
+        }
+
+        .image-box {
+            margin-right: 20px;
+        }
+
+        .additional-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .description-box {
+            width: 100%;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .center-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .description h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-decoration: underline;
+        }
+
+        .description p {
+            margin: 10px 0;
+        }
+
+        .buy-button {
+            background-color: #128403;
+            color: #faf5f5;
+            padding: 10px 20px;
+            width:300px;
+            text-align: center;
+            margin-left: 200px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top:-50px;
+        }
+
+        .buy-button:hover {
+            background-color: #055801;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="nav-links">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="library.html">Library</a></li>
+            </ul>
+        </div>
+        <div class="account-container">
+            <a href="account.html">Account</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="image-box-container">
+            <div class="image-box">
+                <img src="fc.jpg" alt="Description of the image" class="center-image">
+            </div>
+            <div class="additional-box">
+                <div>
+                    <h2>FC 24</h2>
+                    <p>REVIEW</p>
+                    <p>RECENT REVIEWS:
+                        Mixed (6,837)
+                        <p> ALL REVIEWS:
+                        Mixed (68,540)
+                        <p> RELEASE DATE:
+                        28 Sep, 2023
+                        <p> DEVELOPER:
+                        EA Canada & EA Romania
+                        <p> PUBLISHER:
+                        Electronic Arts</p>
+                </div>
+                <div>
+                    <h3>Price : RS 1199</h3>
+                </div>
+                <button class="buy-button">BUY</button>
+            </div>
+        </div>
+        <div class="description-box">
+            <div class="description">
+                <h2>ABOUT THIS GAME</h2>
+                <p>UEFA EURO 2024™
+                    <p> Everyone’s in—including you. Lead your nation against the best and challenge for international glory as champions from across The World’s Game go head-to-head to become Champions of Europe.
+                    
+                        <p>  Live every twist and thrill of the authentic UEFA EURO 2024 experience and write a new chapter in this iconic competition’s history as the full tournament comes to EA SPORTS FC 24 as a post-launch update at no additional cost.*
+                    
+                            <p> *Requires EA SPORTS FC 24 (sold separately) and all game updates, EA Account and internet connection.</p>
+                <h2>SYSTEM REQUIREMENTS</h2>
+                <p>MINIMUM:</p>
+                <p>OS: Windows 10 - 64-Bit (Latest Update)
+                    <p></p>Processor: Intel Core i5-6600K @ 3.50GHz or AMD Ryzen 5 1600 @ 3.2 GHZ
+                    <p> Memory: 8 GB RAM
+                        <p>Graphics: NVIDIA GeForce GTX 1050 Ti 4GB or AMD Radeon RX 570 4GB
+                            <p> DirectX: Version 12
+                                <p>Network: Broadband Internet connection
+                                    <p>Storage: 100 GB available space
+                                        <p> Additional Notes: DirectX: 12 Compatible video card or equivalent (feature level 12_0)</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

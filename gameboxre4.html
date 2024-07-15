@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image with Description</title>
+    <style>
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            padding: 0 20px;
+            height: 60px;
+        }
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+        .search-container input[type="text"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 300px;
+        }
+        .search-container button[type="submit"] {
+            padding: 8px 15px;
+            background-color: #04621f;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .search-container button[type="submit"]:hover {
+            background-color: #039b2e;
+        }
+        .nav-links ul {
+            list-style: none;
+            display: flex;
+        }
+        .nav-links ul li {
+            margin: 0 15px;
+        }
+        .nav-links ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 80vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: black;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80%;
+            max-width: 1200px;
+            margin-top: 80px; /* Add margin-top to move it below the header */
+        }
+
+        .image-box-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .image-box, .additional-box, .description-box {
+            background-color: #050505;
+            border-radius: 10px;
+            padding: 20px;
+            color: #faf5f5;
+        }
+
+        .image-box, .additional-box {
+            flex: 1;
+        }
+
+        .image-box {
+            margin-right: 20px;
+        }
+
+        .additional-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .description-box {
+            width: 100%;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .center-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .description h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-decoration: underline;
+        }
+
+        .description p {
+            margin: 10px 0;
+        }
+
+        .buy-button {
+            background-color: #128403;
+            color: #faf5f5;
+            padding: 10px 20px;
+            width:300px;
+            text-align: center;
+            margin-left: 200px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top:-50px;
+        }
+
+        .buy-button:hover {
+            background-color: #055801;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="nav-links">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="library.html">Library</a></li>
+            </ul>
+        </div>
+        <div class="account-container">
+            <a href="account.html">Account</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="image-box-container">
+            <div class="image-box">
+                <img src="r4.jpg" alt="Description of the image" class="center-image">
+            </div>
+            <div class="additional-box">
+                <div>
+                    <h2>Resident Evil 4</h2>
+                    <p>REVIEW</p>
+                    <p>RECENT REVIEWS:
+                        Overwhelmingly Positive (1,688)
+                        <p> ALL REVIEWS:
+                        Overwhelmingly Positive (88,163)
+                        <p> RELEASE DATE:
+                        24 Mar, 2023
+                        <p> DEVELOPER:
+                        CAPCOM Co., Ltd.
+                        <p></p>PUBLISHER:
+                        CAPCOM Co., Ltd.</p>
+                </div>
+                <div>
+                    <h3>Price : RS 2619</h3>
+                </div>
+                <button class="buy-button">BUY</button>
+            </div>
+        </div>
+        <div class="description-box">
+            <div class="description">
+                <h2>ABOUT THIS GAME</h2>
+                <p>Survival is just the beginning.
+
+                    <p> Six years have passed since the biological disaster in Raccoon City.
+                    Agent Leon S. Kennedy, one of the survivors of the incident, has been sent to rescue the president's kidnapped daughter.
+                    <p> He tracks her to a secluded European village, where there is something terribly wrong with the locals.
+                    And the curtain rises on this story of daring rescue and grueling horror where life and death, terror and catharsis intersect.
+                    
+                    <p></p>Featuring modernized gameplay, a reimagined storyline, and vividly detailed graphics,
+                    Resident Evil 4 marks the rebirth of an industry juggernaut.
+                    
+                    <p> Relive the nightmare that revolutionized survival horror.</p>
+                <h2>SYSTEM REQUIREMENTS</h2>
+                <p>MINIMUM:</p>
+                <p>Requires a 64-bit processor and operating system</p>
+                <p>OS: Windows 10 (64 bit)
+                    <p>Processor: AMD Ryzen 3 1200 / Intel Core i5-7500
+                    <p> Memory: 8 GB RAM
+                        <p> Graphics: AMD Radeon RX 560 with 4GB VRAM / NVIDIA GeForce GTX 1050 Ti with 4GB VRAM
+                            <p> DirectX: Version 12
+                                <p> Network: Broadband Internet connection
+                                    <p>Additional Notes: Estimated performance (when set to Prioritize Performance): 1080p/45fps. ・Framerate might drop in graphics-intensive scenes. ・AMD Radeon RX 6700 XT or NVIDIA GeForce RTX 2060 required to support ray tracing.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

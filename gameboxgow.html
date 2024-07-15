@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image with Description</title>
+    <style>
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            padding: 0 20px;
+            height: 60px;
+        }
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+        .search-container input[type="text"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 300px;
+        }
+        .search-container button[type="submit"] {
+            padding: 8px 15px;
+            background-color: #04621f;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .search-container button[type="submit"]:hover {
+            background-color: #039b2e;
+        }
+        .nav-links ul {
+            list-style: none;
+            display: flex;
+        }
+        .nav-links ul li {
+            margin: 0 15px;
+        }
+        .nav-links ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 80vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: black;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80%;
+            max-width: 1200px;
+            margin-top: 80px; /* Add margin-top to move it below the header */
+        }
+
+        .image-box-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .image-box, .additional-box, .description-box {
+            background-color: #050505;
+            border-radius: 10px;
+            padding: 20px;
+            color: #faf5f5;
+        }
+
+        .image-box, .additional-box {
+            flex: 1;
+        }
+
+        .image-box {
+            margin-right: 20px;
+        }
+
+        .additional-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .description-box {
+            width: 100%;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .center-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .description h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-decoration: underline;
+        }
+
+        .description p {
+            margin: 10px 0;
+        }
+
+        .buy-button {
+            background-color: #128403;
+            color: #faf5f5;
+            padding: 10px 20px;
+            width:300px;
+            text-align: center;
+            margin-left: 200px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top:-50px;
+        }
+
+        .buy-button:hover {
+            background-color: #055801;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="nav-links">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="library.html">Library</a></li>
+            </ul>
+        </div>
+        <div class="account-container">
+            <a href="account.html">Account</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="image-box-container">
+            <div class="image-box">
+                <img src="gow.jpg" alt="Description of the image" class="center-image">
+            </div>
+            <div class="additional-box">
+                <div>
+                    <h2>God of War</h2>
+                    <p>REVIEW</p>
+                    <p>RECENT REVIEWS:
+                        Very Positive (964)<p></p>
+                        <p> ALL REVIEWS:
+                        Overwhelmingly Positive (92,459)<p></p>
+                        <p></p>RELEASE DATE:
+                        14 Jan, 2022<p></p>
+                        <p></p>DEVELOPER:
+                        Santa Monica Studio, Jetpack Interactive<p></p>
+                        <p></p>PUBLISHER:
+                        PlayStation Publishing LLC</p>
+                </div>
+                <div>
+                    <h3>Price : RS 3299</h3>
+                </div>
+                <button class="buy-button">BUY</button>
+            </div>
+        </div>
+        <div class="description-box">
+            <div class="description">
+                <h2>ABOUT THIS GAME</h2>
+                <p>Enter the Norse realm<p></p>
+                <p> His vengeance against the Gods of Olympus years behind him, Kratos now lives as a man in the realm of Norse Gods and monsters. It is in this harsh, unforgiving world that he must fight to survive… and teach his son to do the same.<p></p>
+                    
+                <p>  Grasp a second chance<p></p>
+                    <p> Kratos is a father again. As mentor and protector to Atreus, a son determined to earn his respect, he is forced to deal with and control the rage that has long defined him while out in a very dangerous world with his son.<p></p>
+                    
+                    <p></p>Journey to a dark, elemental world of fearsome creatures<p></p>
+                    <p></p>From the marble and columns of ornate Olympus to the gritty forests, mountains and caves of pre-Viking Norse lore, this is a distinctly new realm with its own pantheon of creatures, monsters and gods.<p></p>
+                    
+                    <p> Engage in visceral, physical combat<p></p>
+                    <p> With an over the shoulder camera that brings the player closer to the action than ever before, fights in God of War™ mirror the pantheon of Norse creatures Kratos will face: grand, gritty and grueling. A new main weapon and new abilities retain the defining spirit of the God of War series while presenting a vision of conflict that forges new ground in the genre</p>
+                <h2>SYSTEM REQUIREMENTS</h2>
+                <p>MINIMUM:</p>
+                <p>Requires a 64-bit processor and operating system</p>
+                <p>OS: Windows 10 64-bit<p></p>
+                <p> Processor: Intel i5-2500k (4 core 3.3 GHz) or AMD Ryzen 3 1200 (4 core 3.1 GHz)<p></p>
+                    <p> Memory: 8 GB RAM<p></p>
+                        <p> Graphics: NVIDIA GTX 960 (4 GB) or AMD R9 290X (4 GB)<p></p>
+                            <p> DirectX: Version 11<p></p>
+                                <p>  Storage: 70 GB available space<p></p>
+                                    <p> Additional Notes: DirectX feature level 11_1 required</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

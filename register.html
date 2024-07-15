@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAMEVERSE</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0; 
+            background: url('login_1.jpg') no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .header {
+            position: absolute; 
+            top: 0;
+            width: 100%;
+            z-index: 1; 
+        }
+
+        nav img {
+            width: 100px;
+        }
+
+        .input-box {
+            margin-bottom: 20px; 
+        }
+
+        .wrapper {
+            position: absolute;
+            top: 50%;
+            left: 75%;
+            transform: translate(-50%, -50%);
+            width: 350px;
+            max-width: 100%;
+            height: 600px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            border: 2px solid rgba(255, 255, 255, .5);
+            border-radius: 20px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 0 30px rgba(13, 210, 13, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 20px 20px 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #bcb3b3; 
+        }
+
+        .input-box {
+            position: relative;
+            width: 100%;
+            height: 30px;
+            border-bottom: 2px solid #ebe0e0;
+            margin: 30px 0;
+        }
+
+        .input-box label {
+            position: absolute;
+            top: 50%;
+            left: 5px;
+            transform: translateY(-50%);
+            font-size: 1em;
+            color: #ddd2d2;
+            font-weight: 150;
+            pointer-events: none;
+            transition: .5s;
+        }
+
+        .input-box input:focus ~ label,
+        .input-box input:valid ~ label,
+        .input-box input:not(:placeholder-shown) ~ label {
+            top: -5px;
+            font-size: 1.0em;
+            color: #c6bfbf;
+        }
+
+        .input-box input {
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            font-size: 1.3em;
+            color: #f8f1f1;
+            font-weight: 600;
+            padding: 0 35px 20px 5px;
+            transform-origin: 0.0;
+        }
+
+        .input-box .icon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 15px;
+            font-size: 1.2em;
+            color: #aca2a2;
+            line-height: 57px;
+        }
+
+        .remember-forgot {
+            font-size: .9em;
+            color: #bdb7b7;
+            font-weight: 500;
+            margin: -15px 0 25px;
+            display: flex;
+            align-items: center;
+        }
+
+        .remember-forgot label {
+            margin-right: 10px;
+        }
+
+        .remember-forgot label input {
+            accent-color: #9b9393;
+            margin-right: 3px;
+        }
+
+        .remember-forgot a {
+            color: #bcb3b3;
+            text-decoration: none;
+        }
+
+        .remember-forgot a:hover {
+            text-decoration: underline;
+        }
+
+        .btn {
+            width: 90%;
+            height: 50px;
+            background-color: #075e15;
+            border: none;
+            outline: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1em;
+            color: #fff;
+            font-weight: 501;
+        }
+
+        .gender-options {
+            margin-bottom: 0px;
+            margin-left: 6px; 
+            color: #9b9595;
+        }
+
+        .login-register {
+            font-size: .9em;
+            color: #ccc1c1;
+            text-align: center;
+            font-weight: 500;
+            margin: 25px 0 10px;
+        }
+
+        .login-register p a {
+            color: #b1a0a0;
+            text-decoration: none;
+            font-weight: 600;  
+        }
+
+        .login-register p a:hover {
+            text-decoration: underline;
+            color: #b1a0a0;
+        }
+
+        #popupMessage {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <a href="index.html"><img src="logo (2).png"></a>
+        </nav>
+    </section>
+    <div class="wrapper">
+        <h2>Registration</h2>
+        <form id="registerForm" onsubmit="handleSubmit(event)">
+            <div class="input-box">
+                <span class="icon"><ion-icon name="person"></ion-icon></span>
+                <input type="text" id="username-text" name="username" required>
+                <label>Username</label>
+            </div>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="person"></ion-icon></span>
+                <input type="text" name="name" required>
+                <label>Name</label>
+            </div>
+            <div class="gender-options">
+                <label for="gender">Gender:</label>
+                <label for="male"><input type="radio" name="gender" id="male" value="Male" required>Male</label>
+                <label for="female"><input type="radio" name="gender" id="female" value="Female" required>Female</label>
+                <label for="others"><input type="radio" name="gender" id="others" value="Others" required>Others</label>
+            </div>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                <input type="email" name="email" required>
+                <label>Email</label>
+            </div>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="call"></ion-icon></span>
+                <input type="text" name="phoneNumber" pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number" required>
+                <label>Phone number</label>
+            </div>        
+            <div class="input-box">
+                <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                <input type="password" id="password" name="password" required>
+                <label>Password</label>
+            </div>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                <input type="password" id="confirmPassword" required>
+                <label>Confirm Password</label>
+            </div>
+            <div class="remember-forgot">
+                <label><input type="checkbox" required>
+                    I agree to the terms and conditions
+                </label>
+            </div>
+            <button type="submit" class="btn">Register</button>
+        </form>
+        <div class="login-register">
+            <p>Already have an account?
+                <a href="index.html" class="login-link">LOGIN</a></p>
+        </div>
+    </div>
+
+    <!-- Popup message -->
+    <div id="popupMessage">You have successfully registered</div>
+    <script src="register.js"></script>
+</body>
+</html>

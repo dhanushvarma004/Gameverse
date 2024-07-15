@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image with Description</title>
+    <style>
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            padding: 0 20px;
+            height: 60px;
+        }
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+        .search-container input[type="text"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 300px;
+        }
+        .search-container button[type="submit"] {
+            padding: 8px 15px;
+            background-color: #04621f;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .search-container button[type="submit"]:hover {
+            background-color: #039b2e;
+        }
+        .nav-links ul {
+            list-style: none;
+            display: flex;
+        }
+        .nav-links ul li {
+            margin: 0 15px;
+        }
+        .nav-links ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 80vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: black;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80%;
+            max-width: 1200px;
+            margin-top: 80px; /* Add margin-top to move it below the header */
+        }
+
+        .image-box-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .image-box, .additional-box, .description-box {
+            background-color: #050505;
+            border-radius: 10px;
+            padding: 20px;
+            color: #faf5f5;
+        }
+
+        .image-box, .additional-box {
+            flex: 1;
+        }
+
+        .image-box {
+            margin-right: 20px;
+        }
+
+        .additional-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .description-box {
+            width: 100%;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .center-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .description h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-decoration: underline;
+        }
+
+        .description p {
+            margin: 10px 0;
+        }
+
+        .buy-button {
+            background-color: #128403;
+            color: #faf5f5;
+            padding: 10px 20px;
+            width:300px;
+            text-align: center;
+            margin-left: 200px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top:-50px;
+        }
+
+        .buy-button:hover {
+            background-color: #055801;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="nav-links">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="library.html">Library</a></li>
+            </ul>
+        </div>
+        <div class="account-container">
+            <a href="account.html">Account</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="image-box-container">
+            <div class="image-box">
+                <img src="ml.jpg" alt="Description of the image" class="center-image">
+            </div>
+            <div class="additional-box">
+                <div>
+                    <h2>Manor Lords</h2>
+                    <p>REVIEW</p>
+                    <p>RECENT REVIEWS:
+                        Very Positive (4,365)
+                        <p></p>ALL REVIEWS:
+                        Very Positive (41,781)
+                        <p>  RELEASE DATE:
+                        26 Apr, 2024
+                        <p>  DEVELOPER:
+                        Slavic Magic
+                        <p> PUBLISHER:
+                        Hooded Horse</p>
+                </div>
+                <div>
+                    <h3>Price : RS 1499</h3>
+                </div>
+                <button class="buy-button">BUY</button>
+            </div>
+        </div>
+        <div class="description-box">
+            <div class="description">
+                <h2>ABOUT THIS GAME</h2>
+                <p>Manor Lords is a strategy game that allows you to experience the life of a medieval lord. Grow your starting village into a bustling city, manage resources and production chains, and expand your lands through conquest.
+
+                    <p></p>Inspired by the art and architecture of late 14th century Franconia, Manor Lords prioritizes historical accuracy wherever possible, using it to inform gameplay mechanics and visuals alike. Common medieval tropes are avoided in favor of historical accuracy in order to make the world feel more authentic, colorful, and believable.</p>
+                <h2>SYSTEM REQUIREMENTS</h2>
+                <p>MINIMUM:</p>
+                <p>Requires a 64-bit processor and operating system</p>
+                <p>OS: Windows® 10 (64-bit)
+                    <p> Processor: Intel® Core™ i5-4670 (quad-core) / AMD® FX-Series™ FX-4350 (quad-core)
+                        <p>Memory: 8 GB RAM
+                            <p> Graphics: NVIDIA® GeForce® GTX 1050 (2 GB) / AMD® Radeon™ RX-460 (4 GB) / Intel® Arc™ A380 (6 GB)
+                                <p> DirectX: Version 12
+                                    <p> Storage: 15 GB available space</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

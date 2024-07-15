@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image with Description</title>
+    <style>
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            padding: 0 20px;
+            height: 60px;
+        }
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+        .search-container input[type="text"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 300px;
+        }
+        .search-container button[type="submit"] {
+            padding: 8px 15px;
+            background-color: #04621f;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .search-container button[type="submit"]:hover {
+            background-color: #039b2e;
+        }
+        .nav-links ul {
+            list-style: none;
+            display: flex;
+        }
+        .nav-links ul li {
+            margin: 0 15px;
+        }
+        .nav-links ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 80vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: black;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80%;
+            max-width: 1200px;
+            margin-top: 80px; /* Add margin-top to move it below the header */
+        }
+
+        .image-box-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .image-box, .additional-box, .description-box {
+            background-color: #050505;
+            border-radius: 10px;
+            padding: 20px;
+            color: #faf5f5;
+        }
+
+        .image-box, .additional-box {
+            flex: 1;
+        }
+
+        .image-box {
+            margin-right: 20px;
+        }
+
+        .additional-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .description-box {
+            width: 100%;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .center-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .description h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-decoration: underline;
+        }
+
+        .description p {
+            margin: 10px 0;
+        }
+
+        .buy-button {
+            background-color: #128403;
+            color: #faf5f5;
+            padding: 10px 20px;
+            width:300px;
+            text-align: center;
+            margin-left: 200px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top:-50px;
+        }
+
+        .buy-button:hover {
+            background-color: #055801;
+        }
+        
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="nav-links">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="library.html">Library</a></li>
+            </ul>
+        </div>
+        <div class="account-container">
+            <a href="account.html">Account</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="image-box-container">
+            <div class="image-box">
+                <img src="rdr.jpg" alt="Description of the image" class="center-image">
+            </div>
+            <div class="additional-box">
+                <div>
+                    <h2>Red Dead Redemption 2</h2>
+                    <p>REVIEW</p>
+                    <p>RECENT REVIEWS: Very Positive (10,004)</p>
+                    <p>ALL REVIEWS: Very Positive (535,330)</p>
+                    <p>RELEASE DATE: 5 Dec, 2019</p>
+                    <p>DEVELOPER: Rockstar Games</p>
+                    <p>PUBLISHER: Rockstar Games</p>
+                </div>
+                <div>
+                    <h3>Price : RS 3199</h3>
+                </div>
+                <button class="buy-button">BUY</button>
+            </div>
+        </div>
+        <div class="description-box">
+            <div class="description">
+                <h2>ABOUT THIS GAME</h2>
+                <p>America, 1899.</p>
+                <p>Arthur Morgan and the Van der Linde gang are outlaws on the run. With federal agents and the best bounty hunters in the nation massing on their heels, the gang must rob, steal and fight their way across the rugged heartland of America in order to survive. As deepening internal divisions threaten to tear the gang apart, Arthur must make a choice between his own ideals and loyalty to the gang who raised him.</p>
+                <p>Now featuring additional Story Mode content and a fully-featured Photo Mode, Red Dead Redemption 2 also includes free access to the shared living world of Red Dead Online, where players take on an array of roles to carve their own unique path on the frontier as they track wanted criminals as a Bounty Hunter, create a business as a Trader, unearth exotic treasures as a Collector or run an underground distillery as a Moonshiner and much more.</p>
+                <p>With all new graphical and technical enhancements for deeper immersion, Red Dead Redemption 2 for PC takes full advantage of the power of the PC to bring every corner of this massive, rich and detailed world to life including increased draw distances; higher quality global illumination and ambient occlusion for improved day and night lighting; improved reflections and deeper, higher resolution shadows at all distances; tessellated tree textures and improved grass and fur textures for added realism in every plant and animal.</p>
+                <p>Red Dead Redemption 2 for PC also offers HDR support, the ability to run high-end display setups with 4K resolution and beyond, multi-monitor configurations, widescreen configurations, faster frame rates and more.</p>
+                <h2>SYSTEM REQUIREMENTS</h2>
+                <p>MINIMUM:</p>
+                <p>Requires a 64-bit processor and operating system</p>
+                <p>OS: Windows 10 - April 2018 Update (v1803)</p>
+                <p>Processor: Intel® Core™ i7-4770K / AMD Ryzen 5 1500X</p>
+                <p>Memory: 12 GB RAM</p>
+                <p>Graphics: Nvidia GeForce GTX 1060 6GB / AMD Radeon RX 480 4GB</p>
+                <p>Network: Broadband Internet connection</p>
+                <p>Storage: 150 GB available space</p>
+                <p>Sound Card: Direct X Compatible</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    $(document).ready(function () {
+        var apiKey = "rzp_test_mcMsI3DLnPrMFY";
+
+        $('.buy-button').on('click', function (e) {
+            e.preventDefault();
+            var price = "RS 3199"; // Price of the game
+            var options = {
+                key: apiKey,
+                amount: parseInt(price.split(" ")[1]) * 100, // Convert price to paise
+                currency: "INR",
+                name: "GAMEVERSE",
+                description: "Into the gaming world",
+                image: "",
+                prefill: {
+                    name: "Dhanush Varma",
+                    email: "dhanushvarma@gmail.com", // Corrected email address
+                },
+                theme: {
+                    color: "#001F3F"
+                },
+                handler: function (response) {
+                    console.log(response);
+                    // Send payment data to PHP file
+                    $.ajax({
+                        url: "payment.php",
+                        type: "POST",
+                        data: {
+                            userId: "1", // Replace with the actual user ID
+                            paymentId: response.razorpay_payment_id,
+                            transactionId: response.razorpay_payment_id,
+                            amount: parseInt(price.split(" ")[1])
+                        },
+                        success: function (data) {
+                            console.log(data); // Log response from server
+                            // Redirect to payment success page
+                            var paymentSuccessPage = window.open('last.html', '_blank', 'height=600,width=800');
+                            paymentSuccessPage.onload = function() {
+                                // Generate QR code or perform other actions
+                            };
+                        },
+                        error: function (xhr, status, error) {
+                            console.error(xhr.responseText); // Log error message
+                            alert("Error processing payment. Please try again later.");
+                        }
+                    });
+                }
+            };
+            var rzp = new Razorpay(options);
+            rzp.open();
+        });
+    });
+</script>
+</body>
+</html>
+<script>
+    $(document).ready(function () {
+    var apiKey = "rzp_test_mcMsI3DLnPrMFY";
+
+    $('.buy-button').on('click', function (e) {
+        e.preventDefault();
+        var price = "RS 3199"; // Price of the game
+        var options = {
+            key: apiKey,
+            amount: parseInt(price.split(" ")[1]) * 100, // Convert price to paise
+            currency: "INR",
+            name: "GAMEVERSE",
+            description: "Into the gaming world",
+            image: "",
+            prefill: {
+                name: "Dhanush Varma",
+                email: "dhanushvarma@gmail.com", // Corrected email address
+            },
+            theme: {
+                color: "#001F3F"
+            },
+            handler: function (response) {
+                console.log(response);
+                // Send payment data to PHP file
+                $.ajax({
+                    url: "payment.php",
+                    type: "POST",
+                    data: {
+                        userId: "1", // Replace with the actual user ID
+                        paymentId: response.razorpay_payment_id,
+                        transactionId: response.razorpay_payment_id,
+                        amount: parseInt(price.split(" ")[1])
+                    },
+                    success: function (data) {
+                        console.log(data); // Log response from server
+                        alert("Payment successful! Your game has been added to your library.");
+                        var gameBox = `
+                            <div class="game-box action">
+                                <img src="rdr.jpg" alt="" class="game-image">
+                                <div class="game-content">
+                                    <h3 class="game-title">Red Dead Redemption 2</h3>
+                                    <p class="game-description">Shooting . Open world . Multiplayer</p>
+                                    <a href="gameboxrdr2.html" class="play-button">View</a>
+                                </div>
+                            </div>`;
+                        
+                        // Append to the library page
+                        $('#gameLibrary').append(gameBox);
+
+                        // Optionally, redirect to library page if not already there
+                        window.location.href = "library.html";
+                    },
+                    error: function (xhr, status, error) {
+                        console.error(xhr.responseText); // Log error message
+                        alert("Error processing payment. Please try again later.");
+                    }
+                });
+            }
+        };
+        var rzp = new Razorpay(options);
+        rzp.open();
+    });
+});
+</script>
+

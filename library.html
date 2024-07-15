@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Library</title>
+    <style>
+        /* Styles for game boxes */
+        .game-box {
+            display: flex;
+            align-items: center;
+            background-color: #0f0f0f;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .game-box img {
+            width: 120px;
+            height: 120px;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+        .game-content {
+            flex: 1;
+        }
+        .game-title {
+            font-size: 20px;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+        .game-description {
+            font-size: 14px;
+            color: #ccc;
+            margin-bottom: 10px;
+        }
+        .play-button {
+            background-color: #128403;
+            color: #fff;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .play-button:hover {
+            background-color: #0d6700;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Your Game Library</h1>
+        <div id="gameLibrary">
+            <!-- Game boxes will be dynamically added here -->
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAMEVERSE</title>
+   
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0; 
+            background-image: url('login_1.jpg');
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;  
+        }
+
+        .header {
+            position: absolute; 
+            top: 0;
+            width: 100%;
+            z-index: 1; 
+        }
+
+        nav img {
+            width: 100px;
+        }
+
+        .input-box {
+            margin-bottom: 20px; 
+        }
+        .wrapper{
+            position: absolute;
+            top: 60%;
+            right: 10%;
+            transform: translateY(-50%);
+            width: 400px;
+            height: 400px;
+            background: transparent;
+            border: 2px solid rgba(255,255,255,.5);
+            border-radius: 20px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 0 30px rgba(3, 174, 17, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 8px 15px 10px 20px;
+        }
+        h2 {
+            text-align: center; 
+            margin-bottom: 8px;
+            color: #8b8484;
+            
+        }
+        .input-box{
+            position: relative;
+            width: 100%;
+            height: 50px;
+            border-bottom: 2px solid #a59c9c;
+            margin: 30px 0;
+        }
+        .input-box label{
+            position: absolute;
+            top: 50%;
+            left: 5px;
+            transform: translateY(-50%);
+            font-size: 1.5em;
+            color: #8b8484;
+            font-weight: 500;
+            font-style: normal;
+            pointer-events: none;
+            transition: .5s;
+        }
+        .input-box input:focus~label,
+        .input-box input:valid~label{
+            top: -5px;
+        }
+        .input-box input{
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            font-size: 1em;
+            color: #f5f0f0;
+            font-weight: 600;
+            padding: 0 35px 0 5px;
+        }
+        .input-box .icon{
+            position: absolute;
+            right: 8px;
+            font-size: 1.2em;
+            color: #f7f3f3;
+            line-height: 57px;
+        }
+        .remember-forgot{
+            font-size: .9em;
+            color: #928888;
+            font-weight: 500;
+            margin: -15px 0 25px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .remember-forgot label{
+            margin-right: 180px;
+        }
+        .remember-forgot label input {
+            accent-color: #f4e6e6;
+            margin-right: 3px;
+            font-style: inherit;
+        }
+        .remember-forgot a{
+            color: #a39d9d;
+            text-decoration: none;
+        }
+        .remember-forgot a:hover{
+            text-decoration: underline;
+        }
+        .btn{
+            width: 100%;
+            height: 45px;
+            background-color: #075e15;
+            border: none;
+            outline: none;
+            border-radius: 2%;
+            cursor: pointer;
+            font-size: 1em;
+            color: #fff;
+            font-weight: 501;
+        }
+        .login-register{
+            font-size: .9em;
+            color: #ded9d9;
+            text-align: center;
+            font-weight: 500;
+            margin: 25px 0 10px;
+        }
+        .login-register p a {
+            color: #ede5e5;
+            text-decoration: none;
+            font-weight: 600;  
+        }
+        .login-register p a:hover{
+            text-decoration: underline;
+            color: #075e15;
+            font-size: medium;
+        }
+        .ADMIN-register{
+            font-size: .9em;
+            color: #b16b6b;
+            text-align: center;
+            font-weight: 500;
+            margin: 2px 0 1px;
+            text-decoration: double;
+        }
+        .ADMIN-register p a {
+            color: #cfc9c9;
+            text-decoration: none;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+        .ADMIN-register p a:hover{
+            text-decoration: underline;
+        }
+        .popup {
+            position: absolute;
+            right: 10px;
+            top: 0.1px;
+            text-align: top right;
+            padding: 10px 20px 20px 20px;
+            color: #fff;
+            font-style: inherit;
+            z-index: 9999;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .popup h1 {
+            font-size: 50px;
+            font-weight: bold;
+            margin-bottom: 8px;
+
+            
+        }
+
+        .popup p {
+            font-size: 24px;
+             text-align: center;
+             position: absolute;
+             left: 50px;
+             bottom:-20px;
+        }
+        
+        .popup.active {
+            opacity: 1;
+        }
+    </style>
+
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <a href="index.html"><img src="logo (2).png"></a>
+        </nav>
+    </section>
+    <div class="wrapper">
+        <h2>Login</h2>
+        <form id="loginForm" action="/api/login" method="POST">
+            <div class="input-box">
+                <span class="icon"><ion-icon name="person"></ion-icon></span>
+                <input type="text" class="form-control" id="username" name="username" required>
+                <label>Username</label>
+            </div>
+            <div class="input-box">
+                <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                <input type="password" class="form-control" id="password" name="password" required>
+                <label>Password</label>
+            </div>
+            <div class="remember-forgot">
+                <label><input type="checkbox"> Remember me</label>
+                <a href="forgotpassword.html">Forgot Password?</a>
+            </div>
+            <button type="submit" class="btn">LOGIN</button>
+            <div class="login-register">
+                <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
+            </div>
+            <div class="ADMIN-register">
+                <a href="admin.html" class="register-link">ADMIN LOGIN</a>
+            </div>
+        </form>
+    </div>
+    <div class="popup">
+        <h1>GAMEVERSE</h1>
+        <p>WAR.SLAVE.VENGENCE</p>
+    </div>
+    
+
+    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="index.js"></script>
+    <script>
+        setTimeout(function() {
+            document.querySelector('.popup').classList.add('active');
+        }, 1000); 
+
+        // Handle login form submission
+        document.getElementById('loginForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                const response = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ username, password })
+                });
+
+                const result = await response.json();
+                if (response.ok) {
+                    alert(result.message); // Show success message
+                    window.location.href = 'home.html'; // Redirect to home page on successful login
+                } else {
+                    alert(result.message); // Show error message on failed login
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            }
+        });
+    </script>
+    <script>
+        document.querySelector('.register-link').addEventListener('click', function() {
+            window.location.href = 'register.html';
+        });
+       
+    </script>
+
+</body>
+</html>

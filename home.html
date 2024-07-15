@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combined Sidebar and Header</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-rI3f6TnvOXLbLyRZoK43GmMxhY6pzNuCLir/HRq5tZZbC0v28XMNj52jVQEx6EB4RN9JbouTJc+dqMXrwbBw9w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Verdana, sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            padding: 0 20px;
+            height: 60px;
+        }
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+        .search-container input[type="text"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 300px;
+        }
+        .search-container button[type="submit"] {
+            padding: 8px 15px;
+            background-color: #04621f;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .search-container button[type="submit"]:hover {
+            background-color: #039b2e;
+        }
+        .nav-links ul {
+            list-style: none;
+            display: flex;
+        }
+        .nav-links ul li {
+            margin: 0 15px;
+        }
+        .nav-links ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .sidebar {
+            position: fixed;
+            top: 60px;
+            left: 0px;
+            width: 250px;
+            height: 100%;
+            background-color: #000;
+            padding: 20px;
+            z-index: 999;
+            box-shadow: rgba(0, 0, 0, 0.5) 0px 4px 16px;
+        }
+        .sidebar img {
+            width: 25px;
+            height: 25px;
+            margin-right: 10px;
+        }
+        .sidebar button {
+            width: 200px;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            font-size: 20px;
+            font-family: Roboto;
+            font-weight: bold;
+            margin: 20px 0;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            border: none;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+        .sidebar button:active {
+            background-color: rgb(29, 27, 27);
+        }
+        .sidebar .active {
+            background-color: #04621f;
+        }
+        .box {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            background-color: rgb(3, 214, 242);
+            display: flex;
+            flex-direction: row;
+            top: 92px;
+            left: 14px;
+            z-index: 2;
+            opacity: 0.8;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="nav-links">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="library.html">Library</a></li>
+            </ul>
+        </div>
+        <div class="search-container">
+            <input type="text" placeholder="Search...">
+            <button type="submit">Search</button>
+        </div>
+        <div class="account-container">
+            <a href="account.html">Account</a>
+        </div>
+    </div>
+    <div class="sidebar">
+        <button class="All-button active" id="AllButton">
+             All
+        </button>
+        <button class="action-button" id="actionButton">
+             Action
+        </button>
+        <button class="adventure-button" id="adventureButton">
+            Adventure
+        </button>
+        <button class="simulation-button" id="simulationButton">
+             Simulation
+        </button>
+        <button class="horror-button" id="horrorButton">
+             Horror
+        </button>
+        <button class="sports-button" id="sportsButton">Sports</button>
+    </div>
+    <script src="home.js"></script>
+    <script>
+        // Function to handle button clicks and toggle active class
+        function setActiveButton(buttonId) {
+            // Remove active class from all buttons
+            document.querySelectorAll('.sidebar button').forEach(button => {
+                button.classList.remove('active');
+            });
+            // Add active class to the clicked button
+            document.getElementById(buttonId).classList.add('active');
+        }
+
+        // Add event listeners to buttons
+        document.getElementById('AllButton').addEventListener('click', function() {
+            setActiveButton('AllButton');
+        });
+        document.getElementById('actionButton').addEventListener('click', function() {
+            setActiveButton('actionButton');
+        });
+        document.getElementById('adventureButton').addEventListener('click', function() {
+            setActiveButton('adventureButton');
+        });
+        document.getElementById('simulationButton').addEventListener('click', function() {
+            setActiveButton('simulationButton');
+        });
+        document.getElementById('horrorButton').addEventListener('click', function() {
+            setActiveButton('horrorButton');
+        });
+        document.getElementById('sportsButton').addEventListener('click', function() {
+            setActiveButton('sportsButton');
+        });
+    </script>
+    <script src="new.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #010101;
+            margin: 0px;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: left;
+            padding: 20px;
+            margin-left: 200px;
+        }
+
+        .game-box {
+            background-color: #383030;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin: 60px;
+            width: 300px;
+            overflow: hidden;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .game-box:hover {
+            transform: translateY(-10px);
+        }
+
+        .game-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .game-content {
+            padding: 20px;
+        }
+
+        .game-title {
+            font-size: 20px;
+            margin: 0 0 10px;
+        }
+
+        .game-description {
+            font-size: 14px;
+            color: #666;
+            margin: 0 0 20px;
+        }
+
+        .play-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #01577f;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        .play-button:hover {
+            background-color: #23303e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="game-box action">
+            <img src="rdr.jpg" alt="" class="game-image">
+            <div class="game-content">
+                <h3 class="game-title">Red Dead Redemption 2</h3>
+                <p class="game-description">Shooting . Open world . Multiplayer</p>
+                <a href="gameboxrdr2.html" class="play-button">View</a>
+            </div>
+        </div>
+
+        <div class="game-box action">
+            <img src="got.jpg" alt="" class="game-image">
+            <div class="game-content">
+                <h3 class="game-title">Ghost of Tsushima</h3>
+                <p class="game-description">Action . Samurai . Single player </p>
+                <a href="gameboxgot.html" class="play-button">View</a>
+            </div>
+        </div>
+
+        <div class="game-box action">
+            <img src="cb2.jpg" alt="" class="game-image">
+            <div class="game-content">
+                <h3 class="game-title">Cyberpunk 2077</h3>
+                <p class="game-description">Scifi . Action . Open world</p>
+                <a href="gameboxcp.html" class="play-button">View</a>
+            </div>
+        </div>
+        <div class="game-box action">
+            <img src="gow.jpg" alt="" class="game-image">
+            <div class="game-content">
+                <h3 class="game-title">God of War</h3>
+                <p class="game-description">Hack and slash . Single player . RPG</p>
+                <a href="gameboxgow.html" class="play-button">View</a>
+            </div>
+        </div>
+
+        <div class="game-box adventure">
+            <img src="uc.jpg" alt="" class="game-image">
+            <div class="game-content">
+                <h3 class="game-title">Uncharted : legacy of thieves collection</h3>
+                <p class="game-description">Adventure . Story rich . Third person </p>
+                <a href="gameboxunc.html" class="play-button">View</a>
+            </div>
+        </div>
+
+        <div class="game-box adventure">
+            <img src="sm.jpg" alt="" class="game-image">
+            <div class="game-content">
+                <h3 class="game-title">Spiderman remastered</h3>
+                <p class="game-description">Superhero . Adventure . Open world</p>
+                <a href="gameboxsp.html" class="play-button">View</a>
+            </div>
+        </div>
+        <div class="game-box adventure">
+            <img src="it2.jpg" alt="" class="game-image">
+            <div class="game-content">
+                <h3 class="game-title">It Takes Two</h3>
+                <p class="game-description">Adventure . Co-op . Split screen</p>
+                <a href="gameboxit2.html" class="play-button">View</a>
+            </div>
+        </div>
+
+        <div class="game-box adventure">
+            <img src="hf2.jpg" alt="" class="game-image">
+            <div class="game-content">
+                <h3 class="game-title">Horizon Forbidden West</h3>
+                <p class="game-description">Sci-fi . RPG . Adventure </p>
+                <a href="gameboxhfw.html" class="play-button">View</a>
+            </div>
+        </div>
+
+        <div class="game-box horror">
+            <img src="r4.jpg" alt="" class="game-image">
+            <div class="game-content">
+                <h3 class="game-title">Resident Evil 4</h3>
+                <p class="game-description">Horror . Survival . Zombies</p>
+                <a href="gameboxre4.html" class="play-button">View</a>
+            </div>
+        </div>
+        <div class="game-box horror">
+            <img src="los2.jpg" alt="" class="game-image">
+            <div class="game-content">
+                <h3 class="game-title">The Last of Us</h3>
+                <p class="game-description">TPP . Horror . Story rich</p>
+                <a href="gameboxlu.html" class="play-button">View</a>
+            </div>
+        </div>
+
+        <div class="game-box horror">
+            <img src="dg.jpg" alt="" class="game-image">
+            <div class="game-content">
+                <h3 class="game-title">Days Gone</h3>
+                <p class="game-description">Horror . Survival . Single player </p>
+                <a href="gameboxdg.html" class="play-button">View</a>
+            </div>
+        </div>
+
+        <div class="game-box horror">
+            <img src="pac.jpg" alt="" class="game-image">
+            <div class="game-content">
+                <h3 class="game-title">Pacify</h3>
+                <p class="game-description">Horror . Co-op . Survival</p>
+                <a href="gameboxpac.html" class="play-button">View</a>
+            </div>
+        </div>
+        <div class="game-box simulation">
+            <img src="c62.jpg" alt="" class="game-image">
+            <div class="game-content">
+                <h3 class="game-title">Civilization VI</h3>
+                <p class="game-description">Simulation . Strategy . War</p>
+                <a href="gameboxc6.html" class="play-button">View</a>
+            </div>
+        </div>
+
+        <div class="game-box simulation">
+            <img src="ml.jpg" alt="" class="game-image">
+            <div class="game-content">
+                <h3 class="game-title">Manor Lords</h3>
+                <p class="game-description">Building . Strategy . Simulation </p>
+                <a href="gameboxml.html" class="play-button">View</a>
+            </div>
+        </div>
+
+        <div class="game-box simulation">
+            <img src="fs.jpg" alt="" class="game-image">
+            <div class="game-content">
+                <h3 class="game-title">Flight Simulator</h3>
+                <p class="game-description">Open world . Simulation . Beautiful</p>
+                <a href="gameboxfs.html" class="play-button">View</a>
+            </div>
+        </div>
+        <div class="game-box simulation">
+            <img src="e2.jpg" alt="" class="game-image">
+            <div class="game-content">
+                <h3 class="game-title">Euro Truck Simulator</h3>
+                <p class="game-description">Driving . Simulation . Transport</p>
+                <a href="gameboxet.html" class="play-button">View</a>
+            </div>
+        </div>
+
+        <div class="game-box sports">
+            <img src="fc.jpg" alt="" class="game-image">
+            <div class="game-content">
+                <h3 class="game-title">FC 24</h3>
+                <p class="game-description">Football . Sport . Multi player </p>
+                <a href="gameboxfc.html" class="play-button">View</a>
+            </div>
+        </div>
+
+        <div class="game-box sports">
+            <img src="nba.jpg" alt="" class="game-image">
+            <div class="game-content">
+                <h3 class="game-title">NBA 2K24</h3>
+                <p class="game-description">Basketball . Sport . Esports</p>
+                <a href="gameboxnba.html" class="play-button">View</a>
+            </div>
+        </div>
+        <div class="game-box sports">
+            <img src="wwe.jpg" alt="" class="game-image">
+            <div class="game-content">
+                <h3 class="game-title">WWE</h3>
+                <p class="game-description">Wrestling . Sport . Multiplayer</p>
+                <a href="gameboxwwe.html" class="play-button">View</a>
+            </div>
+        </div>
+
+        <div class="game-box sports">
+            <img src="24.jpg" alt="" class="game-image">
+            <div class="game-content">
+                <h3 class="game-title">Cricket24</h3>
+                <p class="game-description">Cricket . Sport . Arcade </p>
+                <a href="gameboxc24.html" class="play-button">View</a>
+            </div>
+        </div>
+
+        <div class="game-box adventure">
+            <img src="ac2.jpg" alt="" class="game-image">
+            <div class="game-content">
+                <h3 class="game-title">Assassins creed</h3>
+                <p class="game-description">Parkour . Action . Open world</p>
+                <a href="gameboxac.html" class="play-button">View</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
